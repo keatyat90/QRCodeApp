@@ -1,3 +1,22 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "node16",
+    "module": "Node16", // Add this line
+    "strict": true,                      // Enable strict mode
+    "noImplicitAny": true,               // Raise error on `any` types
+    "esModuleInterop": true,             // Enable interoperability between CommonJS and ES Modules
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,                // Skip type checking for all declaration files (*.d.ts)
+    "jsx": "react-native",               // Use JSX syntax for React Native
+    "target": "ES6",                     // Target ES6 for modern JavaScript features
+    "resolveJsonModule": true,           // Support importing JSON files
+    "baseUrl": "./",                     // Base directory for resolving non-relative imports
+    "paths": {                           // Add custom paths for module resolution
+      "@components/*": ["src/components/*"],
+      "@screens/*": ["src/screens/*"]
+    }
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
